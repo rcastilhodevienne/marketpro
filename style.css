@@ -1,0 +1,47 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { background-color: #f4f6f9; color: #333; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+h1 { color: #1a2236; margin-bottom: 25px; text-transform: uppercase; font-size: 24px; border-left: 5px solid #3b82f6; padding-left: 10px; }
+h2 { font-size: 18px; color: #4b5563; margin-bottom: 20px; border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; }
+
+.card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px; transition: 0.3s; }
+.escondido { display: none !important; }
+.mt-20 { margin-top: 20px; }
+
+.row-flex { display: flex; gap: 15px; }
+.row-flex input { flex: 1; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.input-group { display: flex; flex-direction: column; gap: 5px; }
+.full-width { grid-column: span 2; }
+.input-group label { font-size: 14px; font-weight: 600; color: #4b5563; }
+.input-group small { font-size: 12px; color: #6b7280; }
+
+input { padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 16px; outline: none; }
+input:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,0.1); }
+
+button {
+    background-color: #3b82f6; color: white; border: none; padding: 12px 25px;
+    border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.2s;
+}
+button:hover { background-color: #2563eb; }
+button:disabled { background-color: #94a3b8; cursor: not-allowed; }
+
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; }
+.stat-box { background: #f8fafc; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #e2e8f0; }
+.stat-box span { font-size: 12px; text-transform: uppercase; color: #64748b; font-weight: bold; }
+.stat-box h3 { font-size: 24px; color: #0f172a; margin-top: 5px; }
+.destaque { background: #eff6ff; border-color: #bfdbfe; }
+.destaque h3 { color: #1d4ed8; }
+
+.detalhes-lucro { background: #f8fafc; border-radius: 8px; padding: 20px; border: 1px solid #e2e8f0; }
+.linha-detalhe { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 15px; }
+.saida { color: #ef4444; }
+.linha-total { border-top: 1px dashed #cbd5e1; padding-top: 12px; font-size: 18px; font-weight: bold; margin-top: 10px; color: #0f172a; }
+
+.alerta { padding: 15px; border-radius: 8px; font-weight: bold; text-align: center; margin-bottom: 20px; font-size: 18px; }
+.neutro { background-color: #f1f5f9; color: #475569; }
+.sucesso { background-color: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+.alerta-amarelo { background-color: #fef08a; color: #854d0e; border: 1px solid #fde047; }
+.erro { background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
