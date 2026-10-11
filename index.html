@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketPro - Análise de Viabilidade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 MarketPro Analytics</h1>
+        
+        <!-- Fase 1: Busca no Mercado -->
+        <div class="card">
+            <h2>1. Radar de Mercado</h2>
+            <div class="form-group row-flex">
+                <input type="text" id="nome-produto" placeholder="Ex: Fone de Ouvido Bluetooth JBL">
+                <button onclick="buscarNoMercado()" id="btn-buscar">Varrer Mercado 🔍</button>
+            </div>
+            
+            <div id="resultado-busca" class="escondido mt-20">
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span>Menor Preço</span>
+                        <h3 id="preco-min">R$ 0,00</h3>
+                    </div>
+                    <div class="stat-box destaque">
+                        <span>Preço Médio Praticado</span>
+                        <h3 id="preco-med">R$ 0,00</h3>
+                    </div>
+                    <div class="stat-box">
+                        <span>Maior Preço</span>
+                        <h3 id="preco-max">R$ 0,00</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fase 2: Custos e Tributos -->
+        <div id="calculadora-custos" class="card escondido">
+            <h2>2. Estrutura de Custos e Tributos</h2>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Custo do Fornecedor (R$)</label>
+                    <input type="number" id="custo-produto" placeholder="0.00" oninput="calcularViabilidade()">
+                </div>
+                <div class="input-group">
+                    <label>Frete/Embalagem (R$)</label>
+                    <input type="number" id="custo-frete" placeholder="0.00" value="0" oninput="calcularViabilidade()">
+                </div>
+                <div class="input-group">
+                    <label>Taxa do Marketplace (%)</label>
+                    <input type="number" id="taxa-mkp" placeholder="Ex: 16" value="16" oninput="calcularViabilidade()">
+                </div>
+                <div class="input-group">
+                    <label>Imposto da Região/Empresa (%)</label>
+                    <input type="number" id="taxa-imposto" placeholder="Ex: 6" value="6" oninput="calcularViabilidade()">
+                </div>
+                <div class="input-group full-width">
+                    <label>Por quanto você quer vender? (R$)</label>
+                    <input type="number" id="preco-venda" placeholder="Digite seu preço" oninput="calcularViabilidade()">
+                    <small>Sugerimos usar o Preço Médio Praticado como base.</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fase 3: Veredito Final -->
+        <div id="painel-veredito" class="card escondido">
+            <h2>3. Viabilidade e Competitividade</h2>
+            <div id="alerta-veredito" class="alerta neutro">
+                Preencha os dados de custo para ver a análise.
+            </div>
+            
+            <div class="detalhes-lucro">
+                <div class="linha-detalhe">
+                    <span>Receita Total Bruta:</span>
+                    <strong id="out-receita">R$ 0,00</strong>
+                </div>
+                <div class="linha-detalhe saida">
+                    <span>(-) Custos Totais (Produto + Frete):</span>
+                    <strong id="out-custos">R$ 0,00</strong>
+                </div>
+                <div class="linha-detalhe saida">
+                    <span>(-) Taxas Marketplace:</span>
+                    <strong id="out-mkp">R$ 0,00</strong>
+                </div>
+                <div class="linha-detalhe saida">
+                    <span>(-) Impostos (Governo):</span>
+                    <strong id="out-impostos">R$ 0,00</strong>
+                </div>
+                <div class="linha-detalhe linha-total">
+                    <span>LUCRO LÍQUIDO FINAL:</span>
+                    <strong id="out-lucro">R$ 0,00</strong>
+                </div>
+                <div class="linha-detalhe linha-total">
+                    <span>MARGEM LÍQUIDA (%):</span>
+                    <strong id="out-margem">0%</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
